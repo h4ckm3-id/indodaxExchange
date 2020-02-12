@@ -1,0 +1,19 @@
+{
+  "name": "indodaxccxt",
+  "version": "1.0.0",
+  "description": "update Indodax ccxt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h4ckm3-id/indodaxExchange.git"
+  },
+  "author": "h4ckm3-id",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/h4ckm3-id/indodaxExchange/issues"
+  },
+  "homepage": "https://github.com/h4ckm3-id/indodaxExchange#readme"
+}
