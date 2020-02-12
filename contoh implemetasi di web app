@@ -1,0 +1,29 @@
+    // Saya Menggunakan framework Quasar VueJS
+    // code ini saya implementasikan di store menggunakan state,actions,mutations
+    
+    async getportfolio ({ commit, state, dispatch }) {
+      const key = await state.user.api
+      const secret = await state.user.secret
+      var exchange = 'indodax'
+
+      try {
+        console.log('data getportfolio', key, secret)
+        this.ccxt = new ccxt[exchange]({ apiKey: key, secret: secret })
+
+        await this.ccxt.fetchBalance().then(res => {
+          console.log('res portfolio', res)
+          if (res['success'] === 0) {
+            setTimeout(() => {
+              dispatch('getportfolio')
+            }, 500)
+            console.log('try again...')
+          } else {
+            const balance = res['balance']
+            commit('getPortFolio', balance)
+            console.log('getPortFolio succes: ', balance)
+          }
+        })
+      } catch (error) {
+        console.log('getPortFolio', error)
+      }
+    }
